@@ -28,7 +28,7 @@ python create_dataset.py --n_train=35 --n_val=9
 n_train and n_val stands for the number of images you want for training and validation respectively. This script would create the training and validation slices for the Left and Right STN and store them in the Training and Validation folders. 
 
 The Training and Valdation Folders are organized as follows:
-
+```
 |-Training
   |-masks
     |-left_stn
@@ -44,7 +44,7 @@ The Training and Valdation Folders are organized as follows:
   |-slices
     |-left_stn
     |-right_stn
-    
+ ```
 This shows that for each folder, there exists sub-directories for the human annotated masks called 'masks' and corresponding MRI 2D slices called 'slices'. Furthermore, each of those sub-directories have a left_stn and right_stn sub-directory.
 
 
