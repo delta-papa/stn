@@ -1,28 +1,33 @@
 # 3D Segmentation of the Subthalamic Nucleus in the Brain
 
-This repo contains code for implementing 3D Volumetric Segmentation using a 2D U-Net. 
+This repo contains code for implementing 3D Volumetric Segmentation of the Subthalamic Nucleus (STN) in the brain using a 2D U-Net. The STN is a region in the brain that is stimulated by neurosurgeons to reduce the effect of tremors in Parkinson's Disease Patients. However, the location, size and orientation of the STN is 
+not fixed for each patient. Moreover, traditional techniques often make use of a Brain ATLAS to locate such regions in the brain. 
+
+This project is a step forward to detect and segment the STN independent of an ATLAS. The STN consists of a Left and Right portion known as the Left STN (LSTN) and Right STN (RSTN) respectively. To trace each STN manually, a human annotator takes about 30 minutes. This is an arduous task for any surgeon. My model performs this segmentation in the STN.
 
 ### Dependencies
 This code depends on the following libraries:
 
-- Python >= 3.5
-- Pytorch 0.3.1 (Testing on more recent versions)
+- Python >= 3.6
+- Tensorflow 2.2.0 
 - nibabel
-- medpy
+- numpy = 1.16
+- matplotlib = 3.2.2
 
-
-### Training
-
-The model can be trained using below command:  
-```
-python mainLiviaNet.py
-```
 
 ## Preparing your data
 - To use your own data, you will have to specify the path to the folder containing this data (--root_dir).
 - Images have to be in nifti (.nii) format
 - You have to split your data into two folders: Training/Validation. Each folder will contain 2 sub-folders: 1 subfolder that will contain the image modality and GT, which contain the nifti files for the images and their corresponding ground truths. 
 - In the runTraining function, you have to change the name of the subfolders to the names you have in your dataset (lines 129-130 and 143-144).
+
+
+### Training
+
+The model can be trained using below command:  
+```
+python train.py 
+```
 
 ## Current version
 - The current version includes LiviaNET. We are working on including some extensions we made for different challenges (e.g., semiDenseNet on iSEG and ENIGMA MICCAI Challenges (2nd place in both))
