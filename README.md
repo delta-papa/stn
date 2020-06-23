@@ -5,7 +5,7 @@ not fixed for each patient. Moreover, traditional techniques often make use of a
 
 This project is a step forward to detect and segment the STN independent of an ATLAS. The STN consists of a Left and Right portion known as the Left STN (LSTN) and Right STN (RSTN) respectively. To trace each STN manually, a human annotator takes about 30 minutes. This is an arduous task for any surgeon. My model performs this segmentation in the STN.
 
-### Dependencies
+## Dependencies
 This code depends on the following libraries:
 
 - Python >= 3.6
@@ -48,7 +48,7 @@ The Training and Valdation Folders are organized as follows:
 This shows that for each folder, there exists sub-directories for the human annotated masks called 'masks' and corresponding MRI 2D slices called 'slices'. Furthermore, each of those sub-directories have a left_stn and right_stn sub-directory.
 
 
-### Training
+## Training
 
 The model can be trained using below command:  
 ```
