@@ -23,7 +23,7 @@ streamlit==0.62.0
 
 You may run the following command to install the dependencies:
 ```
-pip install requirements.txt 
+pip install -r requirements.txt 
 ```
 
 ## Preparing the data
