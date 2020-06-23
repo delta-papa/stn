@@ -6,7 +6,7 @@ import numpy as np
 from tensorflow import keras
 from utils_new import file_selector, normalizeImageIntensityRange
 import tensorflow as tf
-
+from visualize import visualize
 model = keras.models.load_model('UNET_MRI_June22_val_dice_coeff_0.6.h5')
 
 
@@ -43,4 +43,6 @@ if filename:
 
     new = normalizeImageIntensityRange(new_out)
 
-    st.image(pred_image1[:,:,35]+new[:,:,35], caption='Uploaded Image.', use_column_width=True)
+    import plotly.graph_objects as go
+
+    visualize(new)
