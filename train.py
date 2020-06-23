@@ -82,9 +82,23 @@ def run_training(opts):
     test_dir_slices = os.path.join(test_dir,'slices/imgs/')
     test_dir_masks = os.path.join(test_dir,'masks/imgs/')
 
-    IMG_SIZE = (40,40)
     BATCH_SIZE = opts.batch_size
     SEED = opts.seed
+    lr = opts.lr
+    loss = opts.loss
+    epochs = opts.epochs
+    n_levels = opts.n_levels
+
+    IMG_SIZE = (40,40)
+
+    if loss == 'BCE':
+
+        loss = 'binary_crossentropy'
+
+    elif loss == 'DICE':
+
+        loss = dice_coefficient_loss
+
     NUM_TRAIN = 386
     NUM_TEST = 158
 
@@ -96,14 +110,14 @@ def run_training(opts):
     test_generator = create_segmentation_generator_test(test_dir+'/slices/',test_dir+'/masks/',BATCH_SIZE,SEED)
 
     model = unet(4,out_channels=1)
-    model.compile(optimizer=keras.optimizers.Adam(learning_rate=1e-4),loss=dice_coefficient_loss, metrics=[dice_coefficient])
+    model.compile(optimizer=keras.optimizers.Adam(learning_rate=lr),loss=loss, metrics=['accuracy'])
 
     #model.summary()
     history=model.fit_generator(generator=train_generator,
                         steps_per_epoch=EPOCH_STEP_TRAIN,
                         validation_data=val_generator,
                         validation_steps=EPOCH_STEP_TEST,
-                       epochs=500,shuffle=True)
+                       epochs=epochs,shuffle=True)
 
     model.save(f'UNET_model.h5')
 
@@ -115,6 +129,10 @@ if __name__ == '__main__':
     parser.add_argument('--test_dir', type=str, default='./Testing/', help='directory to save Testing Slices')
     parser.add_argument('--batch_size', type=int, default=4, help='Batch Size')
     parser.add_argument('--seed', type=int, default=2, help='Seed for reproducibility')
+    parser.add_argument('--lr', type=int, default=1e-4, help='Learning Rate')
+    parser.add_argument('--loss', type=str, default='BCE', help='Binary Cross Entropy or Dice Loss [BCE,DICE]')
+    parser.add_argument('--epochs', type=int, default=100, help='Number of epochs')
+    parser.add_argument('--n_levels', type=int, default=4, help='Number of Conv/Max Pool Blocks')
 
     opts = parser.parse_args()
     print(opts)
