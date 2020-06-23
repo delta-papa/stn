@@ -47,6 +47,9 @@ The Training and Valdation Folders are organized as follows:
  ```
 This shows that for each folder, there exists sub-directories for the human annotated masks called 'masks' and corresponding MRI 2D slices called 'slices'. Furthermore, each of those sub-directories have a left_stn and right_stn sub-directory.
 
+## Model
+
+I have developed a customizable 2D U-Net model that takes in a single 40x40 MRI image slice and then segments the STN from that slice. The model is defined in the file unet.py. 
 
 ## Training
 
