@@ -8,12 +8,23 @@ This project is a step forward to detect and segment the STN independent of an A
 ## Dependencies
 This code depends on the following libraries:
 
-- Python >= 3.6
-- Tensorflow 2.2.0 
-- nibabel
-- numpy = 1.16
-- matplotlib = 3.2.2
+Keras==2.4.2
+tensorflow==2.2.0
+Keras-Preprocessing==1.1.2
 
+matplotlib==3.2.2
+nibabel==2.5.2
+nilearn==0.5.2
+numpy==1.16.0
+opencv-python==4.2.0.34
+scikit-image==0.17.2
+scikit-learn==0.20.4
+streamlit==0.62.0
+
+You may run the following command to install the dependencies:
+```
+pip install requirements.txt 
+```
 
 ## Preparing the data
 - The original data is stored in the form of .IMG and .HDR files in the ./data directory. The ./data directory has 3 subdirectories - mri_crop, mask_left, mask_right. The mri_crop directory has the MRI image files for each anonymised patient. The mask_left and mask_right have the respective Left STN and Right STN traces for the patients. For example, if a patient has an anonymous ID 'BG0844' then the patient's MRI scan would be stored in 'mri_crop' with the files 'BG0844.img' and 'BG0844.hdr'. The Left and Right STN masks of the patient will also be stored with the same filenames in the respective folders. 
