@@ -52,10 +52,9 @@ This shows that for each folder, there exists sub-directories for the human anno
 
 The model can be trained using below command:  
 ```
-python train.py --batch_size=4 --seed=2
+python train.py --n_levels = 2  --batch_size=4 --seed=2 --epochs=100 --lr=1e-4 --loss=BCE
 ```
-
-The batch size can be specified as per your choice while seed is used for reproducibility of code. 
+n_levels is the number of convolutional and max pooling blocks used in the encoder-decoder network of the U-Net. The batch size can be specified as per your choice while seed is used for reproducibility of code. Finally you can set the number of epochs, learning rate and loss as hyper-parameters for training the model. Loss can be one of BCE or DICE which stands for Binary Cross Entropy loss and Dice Loss respectively.
 
 This script will make use of the training data created in the previous step to train the 2D U-Net model and save it in the Models directory as .h5 file. 
 
