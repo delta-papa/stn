@@ -16,16 +16,36 @@ This code depends on the following libraries:
 
 
 ## Preparing the data
-- The data is stored in the form of .IMG and .HDR files in the ./data directory. The ./data directory has 3 subdirectories - mri_crop, mask_left, mask_right. 
-The mri_crop directory has the MRI image files for each anonymised patient. The mask_left and mask_right have the respective Left STN and Right STN traces for the patients. For example, if a patient has an anonymous ID 'BG0844' then the patient's MRI scan would be stored in 'mri_crop' with the files 'BG0844.img' and 'BG0844.hdr'. The Left and Right STN masks of the patient will also be stored with the same filenames in the respective folders. 
+- The origina, data is stored in the form of .IMG and .HDR files in the ./data directory. The ./data directory has 3 subdirectories - mri_crop, mask_left, mask_right. The mri_crop directory has the MRI image files for each anonymised patient. The mask_left and mask_right have the respective Left STN and Right STN traces for the patients. For example, if a patient has an anonymous ID 'BG0844' then the patient's MRI scan would be stored in 'mri_crop' with the files 'BG0844.img' and 'BG0844.hdr'. The Left and Right STN masks of the patient will also be stored with the same filenames in the respective folders. 
 
 Note: The reason to use the name 'mri_crop' for the directory containing the MRI images is that these are cropped scans of shape 120x120x120. The original scans themselves are of dimensions 512x512x400 but I have cropped them to the region only where the STN is present. This helps to save computational costs and also focus attention of the computer vision algorithms to the regions near the STN.
 
 You can start by creating the training data for the 2D U-Net model by running the following command:
 
 ```
-python create_dataset.py --n_train=35 --n_val=9
+python create_dataset.py --n_train=35 --n_val=9 
 ```
+n_train and n_val stands for the number of images you want for training and validation respectively. This script would create the training and validation slices for the Left and Right STN and store them in the Training and Validation folders. 
+
+The Training and Valdation Folders are organized as follows:
+
+|-Training
+  |-masks
+    |-left_stn
+    |-right_stn
+  |-slices
+    |-left_stn
+    |-right_stn
+    
+|-Validation
+  |-masks
+    |-left_stn
+    |-right_stn
+  |-slices
+    |-left_stn
+    |-right_stn
+    
+This shows that for each folder, there exists sub-directories for the human annotated masks called 'masks' and corresponding MRI 2D slices called 'slices'. Furthermore, each of those sub-directories have a left_stn and right_stn sub-directory.
 
 
 ### Training
