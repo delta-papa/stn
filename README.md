@@ -1,9 +1,6 @@
-# Pytorch version of LiviaNET
+# 3D Segmentation of the Subthalamic Nucleus in the Brain
 
-This is a Pytorch implementation of LiviaNET. For the detailed architecture please refer to the original paper: [link](https://arxiv.org/pdf/1612.03925.pdf)
-
-This is not the original implementation of the paper (Do not use it to reproduce the results). The original code is based on Theano and can be found [here](https://github.com/josedolz/LiviaNET)
-
+This repo contains code for implementing 3D Volumetric Segmentation using a 2D U-Net. 
 
 ### Dependencies
 This code depends on the following libraries:
