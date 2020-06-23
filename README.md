@@ -7,7 +7,7 @@ This project is a step forward to detect and segment the STN independent of an A
 
 ## Dependencies
 This code depends on the following libraries:
-
+```
 Keras==2.4.2
 tensorflow==2.2.0
 Keras-Preprocessing==1.1.2
@@ -20,7 +20,7 @@ opencv-python==4.2.0.34
 scikit-image==0.17.2
 scikit-learn==0.20.4
 streamlit==0.62.0
-
+```
 You may run the following command to install the dependencies:
 ```
 pip install -r requirements.txt 
