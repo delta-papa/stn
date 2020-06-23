@@ -52,31 +52,20 @@ This shows that for each folder, there exists sub-directories for the human anno
 
 The model can be trained using below command:  
 ```
-python train.py 
+python train.py --batch_size=4 --seed=2
 ```
 
-## Current version
-- The current version includes LiviaNET. We are working on including some extensions we made for different challenges (e.g., semiDenseNet on iSEG and ENIGMA MICCAI Challenges (2nd place in both))
-- A version of SemiDenseNet for single modality segmentation has been added. You can choose the network you want to use with the argument --network
+The batch size can be specified as per your choice while seed is used for reproducibility of code. 
+
+This script will make use of the training data created in the previous step to train the 2D U-Net model and save it in the Models directory as .h5 file. 
+
+
+## Inference
+
+To run the inference on a testing image, run the following command:
+
 ```
---network liviaNet  o  --network SemiDenseNet
+streamlit run inference.py
+
 ```
-- Patch size, and sampling steps values are hard-coded. We will work on a generalization of this, allowing the user to decide the input patch size and the frequence to sample the patches.
-- TO-DO: 
--- Include data augmentation step.
--- Add a function to generate a mask (ROI) so that 1) isolated areas outside the brain can be removed and 2) sampling strategy can be improved. So far, it uniformly samples patches across the whole volume. If a mask or ROI is given, sampling will focus only on those regions inside the mask.
-
-If you use this code in your research, please consider citing the following paper:
-
-- Dolz, Jose, Christian Desrosiers, and Ismail Ben Ayed. "3D fully convolutional networks for subcortical segmentation in MRI: A large-scale study." NeuroImage 170 (2018): 456-470.
-
-If in addition you use the semiDenseNet architecture, please consider citing these two papers:
-
-- [1] Dolz J, Desrosiers C, Wang L, Yuan J, Shen D, Ayed IB. Deep CNN ensembles and suggestive annotations for infant brain MRI segmentation. Computerized Medical Imaging and Graphics. 2019 Nov 15:101660.
-
-- [2] Carass A, Cuzzocreo JL, Han S, Hernandez-Castillo CR, Rasser PE, Ganz M, Beliveau V, Dolz J, Ayed IB, Desrosiers C, Thyreau B. Comparing fully automated state-of-the-art cerebellum parcellation from magnetic resonance images. NeuroImage. 2018 Dec 1;183:150-72.
-
-### Design of the semiDenseNet architecture
-![model](images/semiDenseNet.png)
-
-# LiviaNet_pytorch
+This launches a streamlit app that will open a new browser window where you can see the image you specified as being segmented with the STN. 
