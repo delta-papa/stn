@@ -7,8 +7,21 @@ This project is a step forward to detect and segment the STN independent of an A
 
 Below is a demo of the Streamlit App that I built for performing this segmentation. The user uploads an MRI scan to the app and then the Computer Vision Model performs a prediction of the segmented regions. The result can then be viewed using an interactive 3D Visualization that lets you play with the 3 axes and visualize the prediction. 
 
-![Segmentation](./demo.gif)
 
+<img src="https://github.com/delta-papa/stn/demo.gif" width="48">
+
+
+## 
+
+## Setup
+
+If you wish to have the repository on your local machine and then run the application there you may clone the repository.
+
+```
+git clone https://github.com/delta-papa/stn.git
+
+cd ./stn
+```
 
 ## Dependencies
 This code depends on the following libraries:
@@ -24,13 +37,14 @@ scikit-image==0.17.2
 streamlit==0.62.0
 plotly==4.8.1
 ```
-You may run the following command to install the dependencies:
+You may run the following command to install the dependencies. 
 ```
 pip install -r requirements.txt 
 ```
 
+
 ## Preparing the data
-- The original data is stored in the form of .IMG and .HDR files in the ./data directory. The ./data directory has 3 subdirectories - mri_crop, mask_left, mask_right. The mri_crop directory has the MRI image files for each anonymised patient. The mask_left and mask_right have the respective Left STN and Right STN traces for the patients. For example, if a patient has an anonymous ID 'BG0844' then the patient's MRI scan would be stored in 'mri_crop' with the files 'BG0844.img' and 'BG0844.hdr'. The Left and Right STN masks of the patient will also be stored with the same filenames in the respective folders. 
+The original data is stored in the form of .IMG and .HDR files in the ./data directory. The ./data directory has 3 subdirectories - mri_crop, mask_left, mask_right. The mri_crop directory has the MRI image files for each anonymised patient. The mask_left and mask_right have the respective Left STN and Right STN traces for the patients. For example, if a patient has an anonymous ID 'BG0844' then the patient's MRI scan would be stored in 'mri_crop' with the files 'BG0844.img' and 'BG0844.hdr'. The Left and Right STN masks of the patient will also be stored with the same filenames in the respective folders. 
 
 Note: The reason to use the name 'mri_crop' for the directory containing the MRI images is that these are cropped scans of shape 120x120x120. The original scans themselves are of dimensions 512x512x400 but I have cropped them to the region only where the STN is present. This helps to save computational costs and also focus attention of the computer vision algorithms to the regions near the STN.
 
@@ -78,10 +92,11 @@ This script will make use of the training data created in the previous step to t
 
 ## Inference
 
-To run the inference on a testing image, run the following command:
+To run the inference with the Streamlit application on a testing image, run the following command:
 
 ```
 streamlit run inference.py
 
 ```
-This launches a streamlit app that will open a new browser window where you can see the image you specified as being segmented with the STN. 
+This launches a streamlit app in a new browser window where you can choose the patient for whom you want to segment the STN. Then a 3D Visualization Plot will appear that you can interactively use to locate the segmented region. 
+
