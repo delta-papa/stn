@@ -3,7 +3,9 @@
 This repo contains code for implementing 3D Volumetric Segmentation of the Subthalamic Nucleus (STN) in the brain using a 2D U-Net. The STN is a region in the brain that is stimulated by neurosurgeons to reduce the effect of tremors in Parkinson's Disease Patients. However, the location, size and orientation of the STN is 
 not fixed for each patient. Moreover, traditional techniques often make use of a Brain ATLAS to locate such regions in the brain. 
 
-This project is a step forward to detect and segment the STN independent of an ATLAS. The STN consists of a Left and Right portion known as the Left STN (LSTN) and Right STN (RSTN) respectively. To trace each STN manually, a human annotator takes about 30 minutes. This is an arduous task for any surgeon. My model performs this segmentation in the STN.
+This project is a step forward to detect and segment the STN independent of an ATLAS. The STN consists of a Left and Right portion known as the Left STN (LSTN) and Right STN (RSTN) respectively. To trace both the STN manually, a human annotator takes about 1 hour. This is an arduous task for any surgeon. My model performs this segmentation of the STN within 15 seconds on a 2.3 GHz CPU. 
+
+Below is a demo of the Streamlit App that I built for performing this segmentation. The user uploads an MRI scan to the app and then the Computer Vision Model performs a prediction of the segmented regions. The result can then be viewed using an interactive 3D Visualization that lets you play with the 3 axes and visualize the prediction. 
 
 ![Segmentation](./demo.gif)
 
