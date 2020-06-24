@@ -13,18 +13,16 @@ Below is a demo of the Streamlit App that I built for performing this segmentati
 ## Dependencies
 This code depends on the following libraries:
 ```
+python>=3.7
 Keras==2.4.2
 tensorflow==2.2.0
-Keras-Preprocessing==1.1.2
-
 matplotlib==3.2.2
 nibabel==2.5.2
-nilearn==0.5.2
 numpy==1.16.0
 opencv-python==4.2.0.34
 scikit-image==0.17.2
-scikit-learn==0.20.4
 streamlit==0.62.0
+plotly==4.8.1
 ```
 You may run the following command to install the dependencies:
 ```
