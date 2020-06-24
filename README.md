@@ -1,4 +1,4 @@
-# 3D Segmentation of the Subthalamic Nucleus in the Brain
+# 3D Segmentation of the Subthalamic Nucleus in the Brain - A cut above the rest!
 
 This repo contains code for implementing 3D Volumetric Segmentation of the Subthalamic Nucleus (STN) in the brain using a 2D U-Net. The STN is a region in the brain that is stimulated by neurosurgeons to reduce the effect of tremors in Parkinson's Disease Patients. However, the location, size and orientation of the STN is 
 not fixed for each patient. Moreover, traditional techniques often make use of a Brain ATLAS to locate such regions in the brain. 
@@ -10,7 +10,13 @@ Below is a demo of the Streamlit App that I built for performing this segmentati
 
 <img src="https://github.com/delta-papa/stn/blob/master/demo.gif" width="1200">
 
- 
+##  Application
+I have deployed a Streamlit application that you can use at the following URL:
+
+http://18.222.147.97:8501
+
+The application uses an EC2 instance on Amazon Web Services (AWS). 
+
 
 ## Setup
 
