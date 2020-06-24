@@ -16,7 +16,7 @@ st.title('A Streamlit App for volumetric segmentation of the STN')
 filename = file_selector() #put in utils
 
 if filename:
-    st.write('You selected `%s`' % filename)
+    st.write('You selected `%s`' %filename)
 
     pred_image1 = nib.load(filename).get_fdata()
 
@@ -29,9 +29,9 @@ if filename:
     new_out = np.zeros((120,120,120))
     for z in range(25,45):
 
-        for h in range(0,90,15):
+        for h in range(0,90,20):
 
-            for w in range(0,90,15):
+            for w in range(0,90,20):
 
                 my_bar.progress((z-25)/19)
                 sub_image = pred_image1[h:h+40,w:w+40,z].reshape(-1,40,40,1)
@@ -40,7 +40,9 @@ if filename:
 
                 prediction = model.predict(sub_image)[0]>0.6
 
-                new_out[h:h+40,w:w+40,z]+= prediction[:,:,0]
+                if(np.sum(prediction[:,:,0]) > 30):
+
+                    new_out[h:h+40,w:w+40,z]+= prediction[:,:,0]
 
 
     #print("Total slices is :",i)
