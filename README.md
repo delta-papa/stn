@@ -5,7 +5,7 @@ not fixed for each patient. Moreover, traditional techniques often make use of a
 
 This project is a step forward to detect and segment the STN independent of an ATLAS. The STN consists of a Left and Right portion known as the Left STN (LSTN) and Right STN (RSTN) respectively. To trace each STN manually, a human annotator takes about 30 minutes. This is an arduous task for any surgeon. My model performs this segmentation in the STN.
 
-!demo.gif
+![Segmentation](./demo.gif)
 
 
 ## Dependencies
