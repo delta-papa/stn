@@ -8,7 +8,7 @@ This project is a step forward to detect and segment the STN independent of an A
 Below is a demo of the Streamlit App that I built for performing this segmentation. The user uploads an MRI scan to the app and then the Computer Vision Model performs a prediction of the segmented regions. The result can then be viewed using an interactive 3D Visualization that lets you play with the 3 axes and visualize the prediction. 
 
 
-<img src="https://github.com/delta-papa/stn/blob/master/demo.gif" height="1800", width="1800">
+<img src="https://github.com/delta-papa/stn/blob/master/demo.gif" width="1200">
 
  
 
