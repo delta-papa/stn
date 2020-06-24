@@ -9,11 +9,10 @@ import streamlit as st
 #volume = nib.load('data/mri_crop/BG0796.img').get_fdata()
 
 def visualize(volume):
-        
-    volume = np.rot90(volume[:,30:70,:])
-    st.title("Upload + Classification Example")
 
-    st.write('First image')
+    volume = np.rot90(volume[:,30:70,:])
+    st.title("3D Coronal Section Visualization of Segmentation")
+
     r, c = volume[0].shape
 
     n_slices = volume.shape[0]

@@ -5,8 +5,10 @@ import numpy as np
 def file_selector(folder_path='data/mri_crop/'):
     filenames = [f for f in os.listdir(folder_path) if f.endswith('.img')]
 
-    selected_filename = st.selectbox('Select a file', filenames)
-    return os.path.join(folder_path, selected_filename)
+    selected_filename = st.multiselect('Select an MRI file from the options', filenames)
+
+    if selected_filename:
+        return os.path.join(folder_path, selected_filename[0])
 
 
 
