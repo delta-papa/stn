@@ -4,12 +4,13 @@ import nibabel as nib
 import matplotlib.pyplot as plt
 import numpy as np
 from tensorflow import keras
-from utils_new import file_selector, normalizeImageIntensityRange
+from utils.utils_new import file_selector, normalizeImageIntensityRange
 import tensorflow as tf
-from visualize import visualize
-
+from utils.visualize import visualize
 import tempfile
-model = keras.models.load_model('UNET_MRI_June22_val_dice_coeff_0.6.h5')
+import plotly.graph_objects as go
+
+model = keras.models.load_model('weights/UNET_MRI_June22_val_dice_coeff_0.6.h5')
 
 #input_buffer = st.file_uploader("Upload IMG File", type="img", encoding=None)
 st.title('A Streamlit App for volumetric segmentation of the STN')
@@ -48,7 +49,4 @@ if filename:
     #print("Total slices is :",i)
 
     new = normalizeImageIntensityRange(new_out)
-
-    import plotly.graph_objects as go
-
     visualize(1.8*new+pred_image1)
