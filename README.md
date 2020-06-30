@@ -7,10 +7,13 @@ This project is a step forward to detect and segment the STN independent of an A
 Below is a demo of the Streamlit App that I built for performing this segmentation. The user uploads an MRI scan to the app and then the Computer Vision Model performs a prediction of the segmented regions. The result can then be viewed using an interactive 3D Visualization that lets you play with the 3 axes and visualize the prediction. 
 
 
-<img src="https://github.com/delta-papa/stn/blob/master/demo.gif" width="600">
+<img src="https://github.com/delta-papa/stn/blob/master/demo.gif" width="1200">
 
 
 Following is a demo of how amazing DBS surgery's effects are on patients who have suffered for years with Parkinson's Disease. 
+
+<img src="https://github.com/delta-papa/stn/blob/master/dbs.gif" width="600">
+
 
 ##  Application
 I have deployed a Streamlit application that you can use at the following URL:
