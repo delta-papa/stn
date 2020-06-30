@@ -12,11 +12,11 @@ Below is a demo of the Streamlit App that I built for performing this segmentati
 
 Following is a demo of how amazing DBS surgery's effects are on patients who have suffered for years with Parkinson's Disease. 
 
-<img src="https://github.com/delta-papa/stn/blob/master/dbs.gif" height="300",width="350" />
+<img src="https://github.com/delta-papa/stn/blob/master/dbs.gif" width="350">
 
 The following demo shows how DBS works - similar to a heart pacemaker, neurosurgeons use a brain pacemaker to stimulate the STN.
 
-<img src="https://github.com/delta-papa/stn/blob/master/dbs_animation.gif" height="250",width="100" /> 
+<img src="https://github.com/delta-papa/stn/blob/master/dbs_animation.gif" width="350"> 
 
 ##  Application
 I have deployed a Streamlit application that you can use at the following URL:
