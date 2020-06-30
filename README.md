@@ -1,7 +1,10 @@
 # 3D Segmentation of the Subthalamic Nucleus in the Brain - A cut above the rest!
 
-This repo contains code for implementing 3D Volumetric Segmentation of the Subthalamic Nucleus (STN) in the brain using a 2D U-Net. The STN is a region in the brain that is stimulated by neurosurgeons to reduce the effect of tremors in Parkinson's Disease Patients. However, the location, size and orientation of the STN is 
-not fixed for each patient. Moreover, traditional techniques often make use of a Brain ATLAS to locate such regions in the brain. 
+This repo contains code for implementing 3D Volumetric Segmentation of the Subthalamic Nucleus (STN) in the brain using a 2D U-Net. The STN is a region in the brain that is stimulated by neurosurgeons to reduce the effect of tremors in Parkinson's Disease Patients. 
+
+<img src="https://github.com/delta-papa/stn/blob/master/dbs.gif" width="1200">
+
+However, the location, size and orientation of the STN is not fixed for each patient. Moreover, traditional techniques often make use of a Brain ATLAS to locate such regions in the brain. 
 
 This project is a step forward to detect and segment the STN independent of an ATLAS. The STN consists of a Left and Right portion known as the Left STN (LSTN) and Right STN (RSTN) respectively. To trace both the STN manually, a human annotator takes about 1 hour. This is an arduous task for any surgeon. My model performs this segmentation of the STN within 15 seconds on a 2.3 GHz CPU. 
 
