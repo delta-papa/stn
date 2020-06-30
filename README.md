@@ -10,11 +10,11 @@ Below is a demo of the Streamlit App that I built for performing this segmentati
 <img src="https://github.com/delta-papa/stn/blob/master/demo.gif" width="1200">
 
 
-Following is a demo of how amazing DBS surgery's effects are on patients who have suffered for years with Parkinson's Disease. 
+Following is a demo of how amazing DBS surgery's effects are on patients who have suffered for years with Parkinson's Disease. The patient who was unable to walk properly due before surgery was able to comfortably walk after DBS. 
 
 <img src="https://github.com/delta-papa/stn/blob/master/dbs.gif" height="300" width="450">
 
-The following demo shows how DBS works - similar to a heart pacemaker, neurosurgeons use a brain pacemaker to stimulate the STN.
+The following demo shows how DBS works - similar to a heart pacemaker, neurosurgeons use a brain pacemaker to stimulate the STN. As you see, the importance of 3D Segmentation of the STN will have wide ranging benefits for the world of neurosurgery.
 
 <img src="https://github.com/delta-papa/stn/blob/master/dbs_animation.gif" height="300" width="450"> 
 
@@ -57,7 +57,7 @@ pip install -r requirements.txt
 
 
 ## Preparing the data
-The original data is stored in the form of .IMG and .HDR files in the ./data directory. The ./data directory has 3 subdirectories - mri_crop, mask_left, mask_right. The mri_crop directory has the MRI image files for each anonymised patient. The mask_left and mask_right have the respective Left STN and Right STN traces for the patients. For example, if a patient has an anonymous ID 'BG0844' then the patient's MRI scan would be stored in 'mri_crop' with the files 'BG0844.img' and 'BG0844.hdr'. The Left and Right STN masks of the patient will also be stored with the same filenames in the respective folders. 
+The original data is stored in the form of .IMG and .HDR files in the ./data directory. The ./data directory has 3 subdirectories - mri_crop, mask_left, mask_right. The mri_crop directory has the MRI image files for each anonymised patient. The mask_left and mask_right have the respective Left STN and Right STN traces for the patients. For example, if a patient has an anonymous ID 'BG0844' then the patient's MRI scan would be stored in 'mri_crop' with the files 'BG0844.img' and 'BG0844.hdr'. The Left and Right STN masks of the patient will also be stored with the same filenames in the respective folders. The .hdr files contain information regarding the MRI data that is useful when reading the image files.
 
 Note: The reason to use the name 'mri_crop' for the directory containing the MRI images is that these are cropped scans of shape 120x120x120. The original scans themselves are of dimensions 512x512x400 but I have cropped them to the region only where the STN is present. This helps to save computational costs and also focus attention of the computer vision algorithms to the regions near the STN.
 
