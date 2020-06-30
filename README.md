@@ -10,7 +10,7 @@ Below is a demo of the Streamlit App that I built for performing this segmentati
 <img src="https://github.com/delta-papa/stn/blob/master/demo.gif" width="1200">
 
 
-Following is a demo of how amazing DBS surgery's effects are on patients who have suffered for years with Parkinson's Disease. The patient who was unable to walk properly due before surgery was able to comfortably walk after DBS. 
+Following is a demo of how amazing DBS surgery's effects are on patients who have suffered for years with Parkinson's Disease. The patient who was unable to walk properly before due to Parkinson's was able to comfortably walk after he underwent DBS surgery. 
 
 <img src="https://github.com/delta-papa/stn/blob/master/dbs.gif" height="300" width="450">
 
