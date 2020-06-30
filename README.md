@@ -12,8 +12,10 @@ Below is a demo of the Streamlit App that I built for performing this segmentati
 
 Following is a demo of how amazing DBS surgery's effects are on patients who have suffered for years with Parkinson's Disease. 
 
-<img src="https://github.com/delta-papa/stn/blob/master/dbs.gif" width="600">
-
+<p float="left">
+  <img src="https://github.com/delta-papa/stn/blob/master/dbs.gif" width="300" />
+  <img src="https://github.com/delta-papa/stn/blob/master/dbs_animation.gif" width="300" /> 
+</p>
 
 ##  Application
 I have deployed a Streamlit application that you can use at the following URL:
